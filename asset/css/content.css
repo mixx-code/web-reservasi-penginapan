@@ -1,0 +1,261 @@
+#content {
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 94vh;
+    /* background-color: brown; */
+    display: flex;
+    padding: 5% 10% 0 10%;
+}
+
+.list-card {
+    display: flex;
+    width: 50%;
+    min-height: 600px;
+    /* background-color: brown; */
+    align-items: center;
+    flex-direction: column;
+    padding-top: 22px;
+    padding-bottom: 22px;
+    gap: 50px;
+    box-sizing: border-box;
+    max-height: 500px;
+        /* Atur tinggi maksimal sesuai kebutuhan */
+        overflow-y: auto;
+        /* Tambahkan scroll vertikal */
+}
+ /* Tambahan styling untuk mempercantik scroll */
+ .list-card::-webkit-scrollbar {
+     width: 10px;
+ }
+
+ .list-card::-webkit-scrollbar-thumb {
+     background-color: darkgrey;
+     border-radius: 10px;
+ }
+
+ .list-card::-webkit-scrollbar-track {
+     background: #f1f1f100;
+     border-radius: 10px;
+ }
+
+.card {
+    display: flex;
+    width: 533px;
+    height: 271px;
+    background-color: #FFFFFF;
+    border-radius: 15px;
+    border: 2px solid #B19753;
+    box-shadow: 0px 0px 26px -6px rgba(0, 0, 0, 0.5);
+        -webkit-box-shadow: 0px 0px 26px -6px rgba(0, 0, 0, 0.5);
+        -moz-box-shadow: 0px 0px 26px -6px rgba(0, 0, 0, 0.5);
+}
+
+.img-card {
+    display: flex;
+    height: 100%;
+    width: 30%;
+    border-right: 2px solid #B19753;
+    justify-content: center;
+    align-items: center;
+}
+.content-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 70%;
+    gap: 20px;
+    box-sizing: border-box;
+    padding: 20px 20px;
+    justify-content: center;
+}
+.img-card img {
+    height: 109;
+    width: 109;
+}
+
+.title-card{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.desk-card {
+    font-size: 16px;
+    font-weight: 400;
+    text-align: justify;
+}
+
+.container-action-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.uang-card {
+    font-size: 16px;
+    font-weight: 400;
+    color: #B19753;
+}
+
+.btn-card {
+    width: 116px;
+    height: 30px;
+    background-color: #B19753;
+    border-radius: 15px;
+    border: none;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+}
+.btn-card-sign {
+    text-decoration: none ;
+    width: 116px;
+    padding: 9px 0px 9px 0px;
+    background-color: #B19753;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    border-radius: 15px;
+}
+
+
+.container-invoice {
+    display: flex;
+    width: 50%;
+    height: 400px;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 60px;
+    align-items: center;
+}
+
+.card-invoice {
+    display: flex;
+    flex-direction: column;
+    width: 433px;
+    min-height: 418px;
+    /* background-color: #8f1a1a; */
+    border-radius: 15px;
+    border: 2px solid #B19753;
+    box-sizing: border-box;
+    padding: 20px 35px 20px 35px;
+    box-shadow: 5px 4px 4px 0px rgba(0, 0, 0, 0.75);
+        -webkit-box-shadow: 5px 4px 4px 0px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 5px 4px 4px 0px rgba(0, 0, 0, 0.75);
+}
+.form-card{
+    display: flex;
+    align-items: center;
+}
+
+
+.wrapper-card-date {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.list-invoice-kamar {
+    box-sizing: border-box;
+    border-radius: 7.5px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+    max-height: 215px;
+    min-height: 215px;
+    overflow-y: auto;
+    border: 1px solid #B19753;
+    align-items: center;
+}
+
+ .list-invoice-kamar::-webkit-scrollbar {
+     width: 10px;
+ }
+
+ .list-invoice-kamar::-webkit-scrollbar-thumb {
+     background-color: darkgrey;
+     border-radius: 10px;
+ }
+
+ .list-invoice-kamar::-webkit-scrollbar-track {
+     background: #f1f1f100;
+     border-radius: 10px;
+ }
+
+.wrapper-input-invoice{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.input-date {
+    border: 1px solid #B19753;
+    border-radius: 10px;
+    padding: 2px 7px 2px 7px;
+}
+
+.input-invoice {
+    background-color: transparent;
+    border: none;
+    color: #000;
+    font-size: 16px;
+    font-weight: 400;
+    width: 150px;
+}
+
+.item{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.total-harga {
+    box-sizing: border-box;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    height: 5px;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+.total-harga h1,  .total-harga p{
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.btn-book {
+    width: 183px;
+    height: 51px;
+    background-color: #B19753;
+    cursor: pointer;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    border: none;
+    border-radius: 15px;
+}
+
+.btn-trans {
+    margin-top: 20px;
+    width: 50%;
+    cursor: pointer;
+    color: #B19753;
+    font-size: 20px;
+    font-weight: 500;
+    border: none;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.btn-delete {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 700;
+    color: #FF0000;
+}

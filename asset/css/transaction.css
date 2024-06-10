@@ -1,0 +1,113 @@
+.container-transaction{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    padding: 50px 0px;
+    box-sizing: border-box;
+        max-height: 90vh;
+        /* Atur tinggi maksimal sesuai kebutuhan */
+        overflow-y: auto;
+}
+
+ /* Tambahan styling untuk mempercantik scroll */
+ .container-transaction::-webkit-scrollbar {
+     width: 10px;
+ }
+
+ .container-transaction::-webkit-scrollbar-thumb {
+     background-color: darkgrey;
+     border-radius: 10px;
+ }
+
+ .container-transaction::-webkit-scrollbar-track {
+     background: #f1f1f100;
+     border-radius: 10px;
+ }
+
+.card-trans {
+    box-sizing: border-box;
+    display: flex;
+    width: 80%;
+    height: 271px;
+    background-color: #FFFFFF;
+    padding: 0px 50px 0px 0px;
+    border-radius: 15px;
+    border: 2px solid #B19753;
+    box-shadow: 0px 0px 26px -6px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 0px 0px 26px -6px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0px 0px 26px -6px rgba(0, 0, 0, 0.5);
+}
+
+.img-card-trans {
+    display: flex;
+    height: 100%;
+    width: 20%;
+    border-right: 2px solid #B19753;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-card-trans {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 70%;
+    box-sizing: border-box;
+    padding: 10px 100px;
+    justify-content: center;
+}
+
+.img-card-trans img {
+    height: 109;
+    width: 109;
+}
+
+.title-card-trans {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.desk-card-trans {
+    font-size: 16px;
+    font-weight: 400;
+    text-align: justify;
+}
+
+.container-action-card-trans {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.uang-card-trans {
+    font-size: 16px;
+    font-weight: 400;
+    color: #B19753;
+}
+
+.btn-card-trans {
+    padding: 10px 50px;
+    background-color: #28c513;
+    border-radius: 15px;
+    border: none;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+}
+.btn-del-card-trans {
+    padding: 10px 50px;
+    background-color: #ec1c1c;
+    border-radius: 15px;
+    border: none;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+}

@@ -1,0 +1,18 @@
+.banner {
+    display: flex;
+    height: 100vh;
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+}
+
+.gambar {
+    width: 550.6px;
+    height: 412.44px;
+}
+
+@media (max-width: 1080px) {
+    .banner {
+        display: none;
+    }
+}

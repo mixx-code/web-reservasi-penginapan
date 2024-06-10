@@ -1,0 +1,15 @@
+.content-about {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    padding-top: 50px;
+}
+
+.wrapper-text-content {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 50px 100px 100px 100px;
+}

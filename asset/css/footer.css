@@ -1,0 +1,15 @@
+.footer {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 15px;
+    background-color: #B19753;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.footer p {
+    font-size: 20px;
+    font-weight: 400;
+    color: #fff;
+}
