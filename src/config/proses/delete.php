@@ -1,17 +1,17 @@
 <?php
-include_once "../db/koneksi.php"; // file koneksi ke database
+include_once "../koneksi.php"; // file koneksi ke database
 
-// cek apakah parameter id ada
-if (isset($_GET['transaction_code'])) {
+// cek apakah parameter transaction_kode ada
+if (isset($_GET['transaction_kode'])) {
+    // ambil nilai transaction_kode langsung dari parameter GET
     $transaction_kode = $_GET['transaction_kode'];
-
-    // query untuk menghapus data puisi berdasarkan id
-    $sql = "DELETE FROM tbl_transaction WHERE transaction_kode = $transaction_kode";
+    // query untuk menghapus data transaksi berdasarkan transaction_kode
+    $sql = "DELETE FROM tbl_transactions WHERE transaction_kode = '$transaction_kode'";
 
     // menjalankan query
     if (mysqli_query($conn, $sql)) {
         // jika berhasil menghapus, redirect ke halaman utama
-        echo "<script>alert('Data berhasil disimpan.'); window.location.href='../../pages/main_layout.php?page=transactions';</script>";
+        echo "<script>alert('Data berhasil dihapus.'); window.location.href='../../pages/main_layout.php?page=transactions';</script>";
         exit();
     } else {
         // jika gagal, tampilkan pesan error
@@ -19,5 +19,5 @@ if (isset($_GET['transaction_code'])) {
     }
 }
 
-// tutup koneksi
+// menutup koneksi
 mysqli_close($conn);

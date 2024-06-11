@@ -12,6 +12,7 @@ if ($page != 'sign-up' && $page != 'sign-in') {
                 <a href="../pages/main_layout.php?page=availability" class="default-menu <?= $page == 'availability' ? 'menu-actived' : '' ?>">Availability</a>
                 <a href="../pages/main_layout.php?page=about" class="default-menu <?= $page == 'about' ? 'menu-actived' : '' ?>">About</a>
                 <a href="../pages/main_layout.php?page=contact" class="default-menu <?= $page == 'contact' ? 'menu-actived' : '' ?>">Contact</a>
+                <a href="../pages/main_layout.php?page=contact" class="default-menu <?= $page == 'contact' ? 'menu-actived' : '' ?>">Profile</a>
             </div>
         </div>
         <?php

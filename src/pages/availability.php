@@ -175,7 +175,12 @@ function calculateTotalPrice($selectedRooms)
                 <?php } ?>
             </form>
         </div>
-        <a href="../pages/main_layout.php?page=transactions" class="btn-trans">view transactions</a>
+        <?php
+        if (isset($id_user) && $id_user !== '') {
+            echo '<a href="../pages/main_layout.php?page=transactions" class="btn-trans">view transactions</a>';
+        }
+        ?>
+
     </div>
 </div>
 
