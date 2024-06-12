@@ -28,6 +28,7 @@ if (isset($_SESSION['username']) && isset($_SESSION['id_user']) && isset($_SESSI
     <link rel="stylesheet" href="../../asset/css/about.css">
     <link rel="stylesheet" href="../../asset/css/contact.css">
     <link rel="stylesheet" href="../../asset/css/transaction.css">
+    <link rel="stylesheet" href="../../asset/css/form_profile.css">
     <title></title>
 </head>
 

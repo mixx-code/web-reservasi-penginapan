@@ -49,9 +49,11 @@ nav {
     font-size: 24px;
     font-weight: 500;
     color: #E15050;
+    cursor: pointer;
 }
 .logout:hover {
-    color: #ac50e1; 
+    color: #e1a750;
+    
 }
 
 .login {

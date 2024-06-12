@@ -45,7 +45,7 @@ $result = $conn->query($sql);
                     <p style="text-decoration: underline; font-style: italic; color: #686D76; font-size: small;">Kode transaction : <?= htmlspecialchars($row["transaction_kode"], ENT_QUOTES) ?> </p>
                 </div>
                 <div style="height: 100%; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 10px;">
-                    <a href="../pages/main_layout.php?page=detail-transaction" class="btn-card-trans" onclick="return confirmSignIn()">detail</a>
+                    <a href="../pages/main_layout.php?page=detail-transaction&transaction_kode=<?= $row["transaction_kode"]; ?>"" class=" btn-card-trans" onclick="return confirmSignIn()">detail</a>
                     <a href="../config/proses/delete.php?transaction_kode=<?= $row["transaction_kode"]; ?>" class="btn-del-card-trans" onclick="return confirmSignIn()">delete</a>
                 </div>
             </div>

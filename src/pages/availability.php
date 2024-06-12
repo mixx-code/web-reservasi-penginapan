@@ -88,7 +88,7 @@ function calculateTotalPrice($selectedRooms)
             <input type="hidden" name="action" value="add">';
 
                 // Tampilkan tombol "Select" atau tautan "Sign-in" tergantung pada ketersediaan $id_user
-                if (isset($id_user) && $id_user !== '') {
+                if (isset($isLogin) && $isLogin !== false) {
                     echo '<button type="submit" class="btn-card">Select</button>';
                 } else {
                     echo '<a href="../pages/main_layout.php?page=sign-in" class="btn-card-sign" onclick="return confirmSignIn()">Select</a>';
