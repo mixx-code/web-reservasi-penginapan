@@ -14,18 +14,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['action'])) {
             'id_user' => $_POST['id_user'],
             'transaction_date' => $_POST['transaction_date'],
             'type_rooms' => $_POST['type_rooms'],
+            'current_timestamp' => $_POST['current_timestamp'],
             'price' => $_POST['price']
         ];
 
         // Redirect untuk mencegah form resubmission
-        header("Location: #content");
+        //header("Location: #content");
         // header("Location: ./main_layout.php?page=availability");
+        echo "<script>window.location.href='./main_layout.php?page=availability';</script>";
         exit();
     } elseif ($_POST['action'] == 'delete') {
-        // Menghapus kamar dari session
+        // Menghapus kamar dari session berdasarkan current_timestamp
+        $timestamp = $_POST['current_timestamp'];
+
         if (isset($_SESSION['selected_rooms'])) {
             foreach ($_SESSION['selected_rooms'] as $key => $room) {
-                if ($room['id_room'] == $_POST['id_room']) {
+                if ($room['current_timestamp'] == $_POST['current_timestamp']) {
                     unset($_SESSION['selected_rooms'][$key]);
                     break;
                 }
@@ -36,8 +40,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['action'])) {
         }
 
         // Redirect untuk mencegah form resubmission
-        header("Location: #content");
+        //header("Location: #content");
         // header("Location: ./main_layout.php?page=availability");
+        echo "<script>window.location.href='./main_layout.php?page=availability';</script>";
         exit();
     }
 }
@@ -52,6 +57,15 @@ function calculateTotalPrice($selectedRooms)
     }
     return $totalPrice;
 }
+
+function getCurrentTimestamp()
+{
+    // Mendapatkan timestamp saat ini
+    return time();
+}
+
+// Contoh penggunaan
+$currentTimestamp = getCurrentTimestamp();
 ?>
 
 <div id="content">
@@ -85,6 +99,7 @@ function calculateTotalPrice($selectedRooms)
             <input type="hidden" name="type_rooms" value="' . htmlspecialchars($row["type_rooms"], ENT_QUOTES) . '">
             <input type="hidden" name="price" value="' . htmlspecialchars($row["price"], ENT_QUOTES) . '">
             <input type="hidden" name="transaction_date" value="' . date('Y-m-d') . '">
+            <input type="hidden" name="current_timestamp" value="' . $currentTimestamp . '">
             <input type="hidden" name="action" value="add">';
 
                 // Tampilkan tombol "Select" atau tautan "Sign-in" tergantung pada ketersediaan $id_user
@@ -110,22 +125,25 @@ function calculateTotalPrice($selectedRooms)
     </div>
     <div class="container-invoice">
         <div class="card-invoice">
-            <form action="" method="post" class="form-card">
+            <div class="form-card">
                 <div class="list-invoice-kamar">
                     <?php
                     if (isset($_SESSION['selected_rooms']) && count($_SESSION['selected_rooms']) > 0) {
                         echo "<script>console.log(" . json_encode($_SESSION['selected_rooms']) . ");</script>";
                         foreach ($_SESSION['selected_rooms'] as $room) {
                             echo '
-                                <div class="wrapper-input-invoice">
-                                    <input type="text" class="input-invoice" value="' . htmlspecialchars($room["type_rooms"], ENT_QUOTES) . '" disabled>
-                                    <input type="text" class="input-invoice" value="Rp. ' . number_format($room["price"], 2, ',', '.') . '" disabled>
-                                    <input type="hidden" name="id_room" value="' . htmlspecialchars($room["id_room"], ENT_QUOTES) . '">
-                                    <input type="hidden" name="transaction_date" value="' . htmlspecialchars($room["transaction_date"], ENT_QUOTES) . '">
-                                    <input type="hidden" name="id_user" value="' . htmlspecialchars($room["id_user"], ENT_QUOTES) . '">
-                                    <input type="hidden" name="action" value="delete">
-                                    <a class="btn-delete" href="#content" onclick="this.closest(\'form\').submit(); return false;">x</a>
-                                </div>';
+                    <form action="" method="post" class="form-card">
+                        <div class="wrapper-input-invoice">
+                            <input type="text" class="input-invoice" value="' . htmlspecialchars($room["type_rooms"], ENT_QUOTES) . '" disabled>
+                            <input type="text" class="input-invoice" value="Rp. ' . number_format($room["price"], 2, ',', '.') . '" disabled>
+                            <input type="hidden" name="id_room" value="' . htmlspecialchars($room["id_room"], ENT_QUOTES) . '">
+                            <input type="hidden" name="transaction_date" value="' . htmlspecialchars($room["transaction_date"], ENT_QUOTES) . '">
+                            <input type="hidden" name="id_user" value="' . htmlspecialchars($room["id_user"], ENT_QUOTES) . '">
+                            <input type="hidden" name="current_timestamp" value="' . htmlspecialchars($room["current_timestamp"], ENT_QUOTES) . '">
+                            <input type="hidden" name="action" value="delete">
+                            <button type="submit" class="btn-delete" style="border: none; background-color: transparent; cursor: pointer;">x</button>
+                        </div>
+                    </form>';
                         }
                     } else {
                         echo '<img src="../../asset/img/empty.png" alt="empty" style="width: 155px;" >';
@@ -133,7 +151,7 @@ function calculateTotalPrice($selectedRooms)
                     }
                     ?>
                 </div>
-            </form>
+            </div>
             <form action="../config/proses/insert.php" method="post" style="width: 100%; display: flex; align-items: center;">
                 <?php if (isset($_SESSION['selected_rooms']) && count($_SESSION['selected_rooms']) > 0) { ?>
                     <div class="wrapper-card-date">
